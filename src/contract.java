@@ -117,7 +117,7 @@ public class contract extends JPanel {
         timerLabel.setVisible(false);
         add(timerLabel);
 
-        waiting.setText("Waiting for new ..");
+        waiting.setText("Waiting for new contract...");
         waiting.setForeground(colorGreen);
         waiting.setFont(font);
         waiting.setBounds(50, 15, 300, 30);
@@ -162,7 +162,7 @@ public class contract extends JPanel {
                     }
 
                 }
-            }, 0L, 1000L);
+            }, 0, 1000);
         });
         claimContract.addActionListener((e) -> {
 
