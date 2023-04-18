@@ -10,6 +10,7 @@ public class truckButton extends JButton {
     int price;
 
     truckButton(int truckPrice) {
+
         Color color = new Color(226, 184, 0);
         ImageIcon image = new ImageIcon("src/truckEmojiSmall.png");
         Border border = BorderFactory.createLineBorder(color, 3, true);
@@ -27,6 +28,7 @@ public class truckButton extends JButton {
         setVerticalAlignment(0);
         setHorizontalAlignment(0);
         setFocusPainted(false);
+
     }
 
     void checkValid() {

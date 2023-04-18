@@ -10,6 +10,7 @@ public class biplaneButton extends JButton {
     int price;
 
     biplaneButton(int biplanePrice) {
+
         Color color = new Color(104, 186, 236);
         ImageIcon image = new ImageIcon("src/biplaneEmojiSmall.png");
         Border border = BorderFactory.createLineBorder(color, 3, true);
@@ -28,6 +29,7 @@ public class biplaneButton extends JButton {
         setVerticalAlignment(0);
         setHorizontalAlignment(0);
         setFocusPainted(false);
+
     }
 
     void checkValid() {

@@ -9,9 +9,6 @@ public class userDataSaver {
     BufferedReader fileReader;
     gameData game = new gameData();
 
-    public userDataSaver() {
-    }
-
     public void saveData(String user) {
         try {
 

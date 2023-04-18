@@ -5,9 +5,6 @@ import javax.swing.JLabel;
 public class labelUpdater {
     gameData game = new gameData();
 
-    public labelUpdater() {
-    }
-
     void updateBalance(JLabel label) {
         label.setText("$ " + game.getCurrentMoney());
     }

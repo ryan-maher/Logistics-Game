@@ -27,9 +27,6 @@ public class gameData {
     private static int contractsCompleted = 0;
 
 
-    public gameData() {
-    }
-
     public void increaseTruckIncome(int valuePerSec) {
         truckIncomePerPeriod += valuePerSec;
     }

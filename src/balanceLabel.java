@@ -11,6 +11,7 @@ public class balanceLabel extends JLabel {
     int initialBalance;
 
     balanceLabel(int initial) {
+
         Border border = BorderFactory.createLineBorder(Color.black, 3, true);
         setBorder(border);
         game.setCurrentMoney(initial);
@@ -20,5 +21,6 @@ public class balanceLabel extends JLabel {
         setHorizontalAlignment(0);
         setIcon(image);
         initialBalance = initial;
+
     }
 }
