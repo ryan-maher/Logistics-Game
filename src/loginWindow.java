@@ -49,7 +49,7 @@ public class loginWindow extends JFrame {
         getContentPane().setBackground(Color.gray);
         setLayout(null);
 
-        // Gets users from userList file and adds them to JList list element
+        // Gets users from userList file and adds them to JList list
         while((user = reader.readLine()) != null) {
             userList.addElement(user);
         }
@@ -107,9 +107,11 @@ public class loginWindow extends JFrame {
 
         registerButton.addActionListener((e) -> {
             // Remove leading and trailing spaces of user input username
-            if (!Objects.equals(userText.getText().trim(), "")) {
-                dataSaver.createUser(userText.getText().trim());
-                userList.addElement(userText.getText().trim());
+            String name = userText.getText().trim();
+
+            if (!Objects.equals(name, "")) {
+                dataSaver.createUser(name);
+                userList.addElement(name);
             }
 
         });
