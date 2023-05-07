@@ -1,6 +1,6 @@
-# Logistics-Game
+# Logistics Game
 
-Incremental Java GUI game made for Northeastern's INFO 5100 class using Java FX and Java Swing frameworks
+### Incremental Java GUI game made for Northeastern's INFO 5100 class using Java FX and Java Swing frameworks.
 
 Game login and registration menu:
 
