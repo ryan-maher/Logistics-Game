@@ -43,8 +43,8 @@ public class loginWindow extends JFrame {
         setVisible(true);
         setBackground(colorBlue);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
-        setSize(500, 500);
         setResizable(false);
+        setSize(500, 500);
         setTitle("Logistics Game Login");
         getContentPane().setBackground(Color.gray);
         setLayout(null);
