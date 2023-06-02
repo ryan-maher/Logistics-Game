@@ -8,11 +8,21 @@ public class userDataSaver {
     BufferedWriter fileWriter;
     BufferedReader fileReader;
     gameData game = new gameData();
-
+    osChecker OScheck;
+    
     public void saveData(String user) {
+        
+        OScheck = new osChecker();
+        int operatingSys = OScheck.whichOS();
+
         try {
 
-            fileWriter = new BufferedWriter(new FileWriter("src/users/" + user + ".txt", false));
+            if(operatingSys == 1){
+                fileWriter = new BufferedWriter(new FileWriter("./users/" + user + ".txt", false));
+            } else {
+                fileWriter = new BufferedWriter(new FileWriter("src/users/" + user + ".txt", false));
+            }
+            
             fileWriter.write("" + game.getCurrentMoney() + "," + game.getTruckCount() + "," + game.getTruckCostMult() + "," + game.getTruckIncomePerPeriod() + "," + game.getGearLevel() + "," + game.getGearCostMult() + "," + game.getCapacityLevel() + "," + game.getCapacityCostMult() + "," + game.getBiplaneCount() + "," + game.getBiplaneCostMult() + "," + game.getBiplaneIncomePerPeriod() + "," + game.getWrenchLevel() + "," + game.getWrenchCostMult() + "," + game.getOilLevel() + "," + game.getOilCostMult() + "," + game.getContractsCompleted() + ",");
             fileWriter.flush();
 
@@ -23,9 +33,18 @@ public class userDataSaver {
     }
 
     public void loadData(String user) {
+        
+        OScheck = new osChecker();
+        int operatingSys = OScheck.whichOS();
+        
         try {
 
-            fileReader = new BufferedReader(new FileReader("src/users/" + user + ".txt"));
+            if(operatingSys == 1){
+                fileReader = new BufferedReader(new FileReader("./users/" + user + ".txt"));
+            } else {
+                fileReader = new BufferedReader(new FileReader("src/users/" + user + ".txt"));
+            }
+            
             String line = fileReader.readLine();
             String[] lineContents = line.split(",");
 
@@ -53,9 +72,19 @@ public class userDataSaver {
     }
 
     public void createUser(String user) {
+        
+        OScheck = new osChecker();
+        int operatingSys = OScheck.whichOS();
+        System.out.println(operatingSys);
+        
         try {
 
-            fileWriter = new BufferedWriter(new FileWriter("src/users/userList.txt", true));
+            if(operatingSys == 1){
+                fileWriter = new BufferedWriter(new FileWriter("./users/userList.txt", true));
+            } else {
+                fileWriter = new BufferedWriter(new FileWriter("src/users/userList.txt", true));
+            }
+            
             fileWriter.write("\n" + user);
             fileWriter.flush();
 
@@ -65,7 +94,12 @@ public class userDataSaver {
 
         try {
 
-            fileWriter = new BufferedWriter(new FileWriter("src/users/" + user + ".txt", false));
+            if(operatingSys == 1){
+                fileWriter = new BufferedWriter(new FileWriter("./users/" + user + ".txt", false));
+            } else {
+                fileWriter = new BufferedWriter(new FileWriter("src/users/" + user + ".txt", false));
+            }
+            
             fileWriter.write("5000,0,1.0,50,0,1.0,0,1.0,0,1.0,100,0,1.0,0,1.0,0,");
             fileWriter.flush();
 

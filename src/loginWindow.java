@@ -28,26 +28,39 @@ public class loginWindow extends JFrame {
     Font subfont;
     Border border;
     String user;
+    String filePath;
+    String iconPath;
+    osChecker OScheck;
 
     loginWindow() throws IOException {
 
+        OScheck = new osChecker();
+
+        if(OScheck.whichOS() == 1){
+            filePath = "./users/userList.txt";
+            iconPath = "./truckEmojiSmall.png";
+        } else {
+            filePath = "src/users/userList.txt";
+            iconPath = "src/truckEmojiSmall.png";
+        }
+
         list = new JList<>(userList);
-        reader = new BufferedReader(new FileReader("src/users/userList.txt"));
+        reader = new BufferedReader(new FileReader(filePath));
         dataSaver = new userDataSaver();
         font = new Font("Gill Sans MT", Font.BOLD, 25);
         subfont = new Font("Gill Sans MT", Font.BOLD, 20);
         border = BorderFactory.createLineBorder(colorOrange, 3, true);
 
-        ImageIcon image = new ImageIcon("src/truckEmojiSmall.png");
+        ImageIcon image = new ImageIcon(iconPath);
         setIconImage(image.getImage());
-        setVisible(true);
         setBackground(colorBlue);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
-        setSize(500, 500);
         setResizable(false);
+        setSize(500, 500);
         setTitle("Logistics Game Login");
         getContentPane().setBackground(Color.gray);
         setLayout(null);
+        setVisible(true);
 
         // Gets users from userList file and adds them to JList list
         while((user = reader.readLine()) != null) {

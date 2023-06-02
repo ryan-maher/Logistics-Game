@@ -25,20 +25,31 @@ public class gameWindow extends JFrame {
     Border borderBlue;
     labelUpdater updater;
     Timer timer;
+    String truckImagePath;
+    osChecker OScheck;
 
     gameWindow() {
 
+        OScheck = new osChecker();
+
+        if(OScheck.whichOS() == 1){
+            truckImagePath = "src/truckEmojiSmall.png";
+        } else {
+            truckImagePath = "./truckEmojiSmall.png";
+        }
+        
         borderOrange = BorderFactory.createLineBorder(colorOrange, 1, true);
         borderBlue = BorderFactory.createLineBorder(colorBlue, 1, true);
         updater = new labelUpdater();
         timer = new Timer();
-        setVisible(true);
+        
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         setSize(1366, 768);
         setResizable(false);
         setTitle("Logistics Game");
         getContentPane().setBackground(colorBlue);
         setLayout(null);
+        setVisible(true);
 
         ImageIcon image = new ImageIcon("src/truckEmojiSmall.png");
         setIconImage(image.getImage());
