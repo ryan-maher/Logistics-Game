@@ -4,13 +4,13 @@ public class osChecker {
 
     public int whichOS(){
 
-        System.out.println(OS);
+        //System.out.println(OS);
         
         if(OS.contains("win")){
-            System.out.println(0);
+            //System.out.println(0);
             return 0;
         } else {
-            System.out.println(1);
+            //System.out.println(1);
             return 1;
         }
 
