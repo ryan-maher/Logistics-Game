@@ -10,3 +10,5 @@ Game login and registration menu:
 Main game view:
 
 ![image](https://user-images.githubusercontent.com/24682862/236645426-6a68676d-9605-4f82-8789-52077bff8a1c.png)
+
+Compatibility for unix-based systems has not been implemented yet, currently runs on Windows only.
